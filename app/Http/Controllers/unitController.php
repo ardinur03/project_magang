@@ -8,6 +8,6 @@ class unitController extends Controller
 {
     //lempar rute unit->pindah ke view
     public function pindah () {
-        return view ('unit');
+        return view ('halaman_unit.unit');
     }
 }
