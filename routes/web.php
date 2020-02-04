@@ -20,4 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // rute halaman unit
-Route::get('/unit', 'unitController@pindah');
+Route::get('/home/unit', 'unitController@pindah');
