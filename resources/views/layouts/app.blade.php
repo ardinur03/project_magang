@@ -33,7 +33,7 @@
                         JB-Store
                     </a>
                 </div>
-
+                    
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -71,7 +71,14 @@
                 </div>
             </div>
         </nav>
-
+        <div>
+            <nav>
+                <a href="/home/unit">Unit /</a>
+                <a href="#">Client /</a>
+                <a href="#">Marketing /</a>
+                <a href="#">Pembelian</a>
+            </nav>
+        </div>
         @yield('content')
     </div>
 
