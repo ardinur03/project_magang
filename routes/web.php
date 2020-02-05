@@ -31,3 +31,6 @@ Route::get('/home/unit/edit/{id}', 'unitController@edit');
 Route::post('/home/unit/update', 'unitController@update');
 // rute hapus unit
 Route::get('/home/unit/hapus/{id}', 'unitController@hapus');
+
+
+//2. crud client
