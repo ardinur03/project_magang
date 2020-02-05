@@ -19,7 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// 1. crud unit
 // rute halaman unit
 Route::get('/home/unit', 'unitController@pindah');
-//crud tampil
-// Route::get('/home/unit', 'unitController@tampilunit');
+//crud tampil unit 
+Route::get('/home/unit/tambah_unit', 'unitController@tambah');
+// rute store unit
+Route::post('/home/unit/store', 'unitController@store');
+// rute edit unit
+Route::get('/home/unit/edit/{id}', 'unitController@edit');
+Route::post('/home/unit/update', 'unitController@update');
+// rute hapus unit
+Route::get('/home/unit/hapus/{id}', 'unitController@hapus');
