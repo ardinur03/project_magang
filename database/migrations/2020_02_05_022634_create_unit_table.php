@@ -14,7 +14,12 @@ class CreateUnitTable extends Migration
     public function up()
     {
         Schema::create('unit', function (Blueprint $table) {
-            $table->increments('id');
+            $table->Increments('id_unit', 10);
+            $table->char ('kode_unit', 15);
+            $table->double ('harga', 12, 0);
+            $table->char ('luas', 20);
+            $table->char ('luas_tanah', 20);
+            $table->char ('ket', 250);
             $table->timestamps();
         });
     }
