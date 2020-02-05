@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // rute halaman unit
 Route::get('/home/unit', 'unitController@pindah');
+//crud tampil
+// Route::get('/home/unit', 'unitController@tampilunit');
