@@ -8,7 +8,7 @@
 @section('konten')
     <a href="/home">kembali ke home</a>
     <div class="container">
-    <a href="/unit/tambah">+ unit</a>
+    <a href="/home/unit/tambah_unit">+ unit</a>
     <br>
     <table border="1">
         <tr>
@@ -27,8 +27,8 @@
             <td>{{ $u->luas_tanah }}</td>
             <td>{{ $u->ket }}</td>
             <td>
-                <a href="/unit/edit">edit</a>
-                <a href="/unit/hapus">hapus</a>
+                <a href="/home/unit/edit/{{ $u->id_unit }}">edit</a>
+                <a href="/home/unit/hapus/{{ $u->id_unit }}">hapus</a>
             </td>
         </tr>
         @endforeach
