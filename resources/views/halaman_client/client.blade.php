@@ -55,7 +55,7 @@
                                 <a href="/home/client/edit/{{ $c->id }}" class="btn btn-warning">Edit</a>
                             </td>
                             <td>
-                                <a href="/home/client/hapus/{{ $c->id }}" class="btn btn-danger">Hapus</a>
+                                <a href="/home/client/hapus/{{ $c->id_client }}" class="btn btn-danger">Hapus</a>
                             </td>
                         </tr>
                         @endforeach
