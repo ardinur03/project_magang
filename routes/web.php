@@ -34,3 +34,9 @@ Route::get('/home/unit/hapus/{id}', 'unitController@hapus');
 
 
 //2. crud client
+// rute halaman client dari metod pindah ke clientController
+Route::get('/home/client', 'clientController@pindah');
+// rute tambah
+Route::get('/home/client/tambah', 'clientController@tambah');
+// rute proses simpan
+Route::post('/home/client/proses', 'clientController@proses');
