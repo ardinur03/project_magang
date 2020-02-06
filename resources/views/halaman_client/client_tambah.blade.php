@@ -20,7 +20,7 @@
                     <br>
                     <div class="card mt-5">
                         <div class="card-body">
-                        <form action="/home/client/store" method="POST">
+                        <form action="/home/client/proses" method="POST">
                             {{ csrf_field() }}
 
                             {{--  form isi nama client  --}}
