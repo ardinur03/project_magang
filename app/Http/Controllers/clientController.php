@@ -16,12 +16,14 @@ class clientController extends Controller
         return view ('halaman_client.client', ['client' => $client]);
     }
 
+    // fungsi untuk pindah ke view tambah
     public function tambah () {
         // tembak ke view client tambah blade
         return view ('halaman_client.client_tambah');
     }
 
-    public function store (Request $request) {
+    // fungsi untuk menambahkan client
+    public function proses (Request $request) {
         // jika validasi sesuai kita perintahkan untuk menginput 
         $this->validate($request, [
             'nama_client' => 'required',
@@ -51,6 +53,13 @@ class clientController extends Controller
 
         // mengambalikan ke view
         return redirect('/home/client');
+    }
+
+    // fungsi untuk menghapus client
+    public function delete ($id_client) {
+        $client = Client::find($id_client);
+        $client->delete();
+        return redirect ('/home/client');
     }
 
 }
