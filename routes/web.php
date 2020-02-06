@@ -39,4 +39,4 @@ Route::get('/home/client', 'clientController@pindah');
 // rute tambah
 Route::get('/home/client/tambah', 'clientController@tambah');
 // rute proses simpan
-Route::post('/home/client/proses', 'clientController@proses');
+Route::post('/home/client/store', 'clientController@store');
