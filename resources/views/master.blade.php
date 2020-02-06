@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>JB-Store</title>
+    <title>@yield('title')</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -42,6 +42,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        <a href="/home">Home /</a>
+                        <a href="/home/unit">Unit /</a>
+                        <a href="/home/client">Client /</a>
+                        <a href="#">Marketing /</a>
+                        <a href="#">Pembelian</a>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -51,7 +56,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
+                                
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ route('logout') }}"
@@ -71,15 +76,7 @@
                 </div>
             </div>
         </nav>
-        <div>
-            <nav>
-                <a href="/home/unit">Unit /</a>
-                <a href="#">Client /</a>
-                <a href="#">Marketing /</a>
-                <a href="#">Pembelian</a>
-            </nav>
-        </div>
-        @yield('konten')
+        @yield('content')
     </div>
 
     <!-- Scripts -->

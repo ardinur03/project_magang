@@ -1,5 +1,6 @@
 @extends('master')
 
+@section('title', 'Home JB-Store')
 @section('content')
 <div class="container">
     <div class="row">
