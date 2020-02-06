@@ -21,10 +21,11 @@ class clientController extends Controller
         return view ('halaman_client.client_tambah');
     }
 
-    public function proses (Request $request) {
+    public function store (Request $request) {
         // jika validasi sesuai kita perintahkan untuk menginput 
         $this->validate($request, [
             'nama_client' => 'required',
+            'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
@@ -35,7 +36,7 @@ class clientController extends Controller
             'crated_by' => 'required'   
         ]);
 
-        client::create([
+        Client::create([
             'nama_client' => $request->nama_client,
             'tempat_lahir' => $request->tempat_lahir,
             'tanggal_lahir' => $request->tanggal_lahir,
@@ -45,7 +46,7 @@ class clientController extends Controller
             'no_hp' => $request->no_hp,
             'email' => $request->email,
             'ket' => $request->ket,
-            'created_by' => $request->created_by
+            'crated_by' => $request->crated_by
         ]);
 
         // mengambalikan ke view
