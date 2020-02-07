@@ -1,12 +1,12 @@
 @extends('master')
 
-@section('title', 'Tambah | Client')
+@section('title', 'Edit | Client')
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Tambah Client</strong></div>
+                <div class="panel-heading"><strong>Edit Client</strong></div>
 
                 <div class="panel-body bg-success">
                     {{--  @if (session('status'))
@@ -20,13 +20,13 @@
                     <br>
                     <div class="card mt-5">
                         <div class="card-body">
-                        <form action="/home/client/proses" method="POST">
+                        <form action="/home/client/update/{{ $client->id_client}}" method="POST">
                             {{ csrf_field() }}
-
+                            {{ method_field('PUT') }}
                             {{--  form isi nama client  --}}
                             <div class="form-group">
                                 <label>Nama Client</label>
-                                <input type="text" name="nama_client" class="form-control" placeholder="Nama client...">
+                            <input type="text" name="nama_client" class="form-control" placeholder="Nama client..." value="{{ $client->nama_client }}">
                                 @if($errors->has('nama_client'))
                                     <div class="text-danger">
                                         {{ $errors->first('nama_client')}}
@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 <label>Tempat Lahir</label>
                                 <select name="tempat_lahir" class="form-control">
-                                    <option>Tempat Lahir...</option>
+                                    <option value="{{ $client->nama_client }}">{{ $client->tempat_lahir }}</option>
                                     <option value="Bandung">Bandung</option>
                                     <option value="Jakarta">Jakarta</option>
                                     <option value="Surabaya">Surabaya</option>
@@ -53,7 +53,7 @@
                             {{-- form isi tanggal lahir  --}}
                             <div class="form-group">
                                 <label>Tanggal Lahir</label>
-                                <input type="date" name="tanggal_lahir" class="form-control">
+                                <input type="date" name="tanggal_lahir" class="form-control" value="{{ $client->tanggal_lahir  }}">
                                 @if($errors->has('tanggal_lahir'))
                                     <div class="text-danger">
                                         {{ $errors->first('tanggal_lahir')}}
@@ -76,7 +76,7 @@
                             {{--  form isi alamat  --}}
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <textarea name="alamat" class="form-control" placeholder="Alamat..."></textarea>
+                                <textarea name="alamat" class="form-control" placeholder="Alamat...">{{ $client->alamat  }}</textarea>
                                 @if($errors->has('alamat'))
                                     <div class="text-danger">
                                         {{ $errors->first('alamat')}}
@@ -87,7 +87,7 @@
                             {{--  form isi no ktp  --}}
                             <div class="form-group">
                                 <label>No KTP</label>
-                                <input type="number" name="no_ktp" class="form-control" placeholder="No KTP...">
+                                <input type="number" name="no_ktp" class="form-control" placeholder="No KTP..." value="{{ $client->no_ktp  }}">
                                 @if($errors->has('no_ktp'))
                                     <div class="text-danger">
                                         {{ $errors->first('no_ktp')}}
@@ -98,7 +98,7 @@
                             {{--  form isi no hp  --}}
                             <div class="form-group">
                                 <label>No HP</label>
-                                <input type="number" name="no_hp" class="form-control" placeholder="No HP...">
+                                <input type="number" name="no_hp" class="form-control" placeholder="No HP..." value="{{ $client->no_hp }}">
     
                                 @if($errors->has('no_hp'))
                                     <div class="text-danger">
@@ -110,7 +110,7 @@
                             {{--  form isi email  --}}
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="text" name="email" class="form-control" placeholder="Email...">
+                                <input type="text" name="email" class="form-control" placeholder="Email..." value="{{ $client->email  }}">
                                 @if($errors->has('email'))
                                     <div class="text-danger">
                                         {{ $errors->first('email')}}
@@ -121,7 +121,7 @@
                             {{--  isi form keterangan  --}}
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <textarea name="ket" class="form-control" placeholder="Keterangan..."></textarea>
+                                <textarea name="ket" class="form-control" placeholder="Keterangan...">{{ $client->ket  }}</textarea>
                                 @if($errors->has('ket'))
                                     <div class="text-danger">
                                         {{ $errors->first('ket')}}
@@ -132,7 +132,7 @@
                             {{--  isi form created BY  --}}
                             <div class="form-group">
                                 <label>Created By</label>
-                                <input type="number" name="crated_by" class="form-control" placeholder="Crated by...">
+                                <input type="number" name="crated_by" class="form-control" placeholder="Crated by..." value="{{ $client->crated_by  }}">
                                 @if($errors->has('crated_by'))
                                     <div class="text-danger">
                                         {{ $errors->first('crated_by')}}

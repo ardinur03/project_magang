@@ -10,4 +10,7 @@ class client extends Model
     protected $table = "client";
 
     protected $fillable = ['nama_client', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'alamat', 'no_ktp', 'no_hp', 'email', 'ket', 'crated_by'];
+    
+    // untuk
+    protected $primaryKey = 'id_client';
 }

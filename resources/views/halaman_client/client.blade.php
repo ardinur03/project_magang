@@ -12,7 +12,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Client</strong></div>
     
-                <div class="panel-body">
+                <div class="panel-body bg-success">
                     {{--  @if (session('status'))
                         <div class="alert alert-success">
                         {{ session('status') }}
@@ -52,7 +52,7 @@
                             <td>{{ $c->ket }}</td>
                             <td>{{ $c->crated_by }}</td>
                             <td>
-                                <a href="/home/client/edit/{{ $c->id }}" class="btn btn-warning">Edit</a>
+                                <a href="/home/client/edit/{{ $c->id_client }}" class="btn btn-warning">Edit</a>
                             </td>
                             <td>
                                 <a href="/home/client/hapus/{{ $c->id_client }}" class="btn btn-danger">Hapus</a>

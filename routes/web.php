@@ -42,3 +42,7 @@ Route::get('/home/client/tambah', 'clientController@tambah');
 Route::post('/home/client/proses', 'clientController@proses');
 // rute hapus client
 Route::get('/home/client/hapus/{id_client}', 'clientController@delete');
+// rute edit client
+Route::get('/home/client/edit/{id_client}', 'clientController@edit');
+// rute proses update
+Route::put('/home/client/update/{id_client}', 'clientController@update');
