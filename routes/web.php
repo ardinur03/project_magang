@@ -24,13 +24,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/unit', 'unitController@pindah');
 //crud tampil unit 
 Route::get('/home/unit/tambah_unit', 'unitController@tambah');
-// rute store unit
-Route::post('/home/unit/store', 'unitController@store');
+// rute proses unit
+Route::put('/home/unit/proses/{id_unit}', 'unitController@update');
 // rute edit unit
-Route::get('/home/unit/edit/{id}', 'unitController@edit');
-Route::post('/home/unit/update', 'unitController@update');
+Route::get('/home/unit/edit/{id_unit}', 'unitController@edit');
+// rute tambah
+Route::post('/home/unit/proses', 'unitController@proses');
 // rute hapus unit
-Route::get('/home/unit/hapus/{id}', 'unitController@hapus');
+Route::get('/home/unit/hapus/{id_unit}', 'unitController@delete');
 
 
 //2. crud client
@@ -38,7 +39,7 @@ Route::get('/home/unit/hapus/{id}', 'unitController@hapus');
 Route::get('/home/client', 'clientController@pindah');
 // rute tambah client
 Route::get('/home/client/tambah', 'clientController@tambah');
-// rute proses simpan c;ient
+// rute proses simpan client
 Route::post('/home/client/proses', 'clientController@proses');
 // rute hapus client
 Route::get('/home/client/hapus/{id_client}', 'clientController@delete');
