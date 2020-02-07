@@ -26,32 +26,31 @@ class clientController extends Controller
     public function proses (Request $request) {
         // memvalidasi form
         $this->validate($request, [
-            'nama_client' => 'required',
-            'tempat_lahir' => 'required',
+            'nama_client'   => 'required',
+            'tempat_lahir'  => 'required',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
-            'alamat' => 'required',
-            'no_ktp' => 'required',
-            'no_hp' => 'required',
-            'email' => 'required',
-            'ket' => 'required',
+            'alamat'    => 'required',
+            'no_ktp'    => 'required',
+            'no_hp'     => 'required',
+            'email'     => 'required',
+            'ket'       => 'required',
             'crated_by' => 'required'   
         ]);
         // proses input
         Client::create([
-            'nama_client' => $request->nama_client,
-            'tempat_lahir' => $request->tempat_lahir,
+            'nama_client'   => $request->nama_client,
+            'tempat_lahir'  => $request->tempat_lahir,
             'tanggal_lahir' => $request->tanggal_lahir,
             'jenis_kelamin' => $request->jenis_kelamin,
-            'alamat' => $request->alamat,
-            'no_ktp' => $request->no_ktp,
-            'no_hp' => $request->no_hp,
-            'email' => $request->email,
-            'ket' => $request->ket,
+            'alamat'    => $request->alamat,
+            'no_ktp'    => $request->no_ktp,
+            'no_hp'     => $request->no_hp,
+            'email'     => $request->email,
+            'ket'       => $request->ket,
             'crated_by' => $request->crated_by
         ]);
-
-        // mengambalikan ke view
+        // mengembalikan ke view
         return redirect('/home/client');
     }
 
@@ -59,7 +58,7 @@ class clientController extends Controller
     public function delete ($id_client) {
         $client = Client::find($id_client);
         $client->delete(); 
-
+        // mengembalikan
         return redirect ('/home/client');
     }
 
@@ -71,7 +70,7 @@ class clientController extends Controller
 
     // method untuk proses update
     public function update ($id_client, Request $request) {
-        // memvalidasi form
+        // memvalidasi formvedit client
         $this->validate($request, [
             'nama_client' => 'required',
             'tempat_lahir' => 'required',
@@ -84,7 +83,7 @@ class clientController extends Controller
             'ket' => 'required',
             'crated_by' => 'required'   
         ]);
-        // proses edit
+        // proses edit client
         $client = Client::find($id_client);
         $client ->nama_client = $request->nama_client;
         $client ->tempat_lahir = $request->tempat_lahir;
