@@ -16,6 +16,7 @@
     <style>
         th {
             background-color: lightblue;
+            text-align: center;
         }
     </style>
 </head>
