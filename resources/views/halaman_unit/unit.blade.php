@@ -11,8 +11,8 @@
         <div class="row">
             <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Unit</div>
-                    <div class="panel-body">
+                    <div class="panel-heading"><strong><h4>Unit</h4></strong></div>
+                    <div class="panel-body bg-info">
                         {{--  @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}
@@ -23,12 +23,12 @@
                         <br>
                         <table  class="table table-bordered table-hover table-striped">
                             <tr>
-                                <td>Kode Unit</td>
-                                <td>Harga</td>
-                                <td>Luas</td>
-                                <td>Luas Tanah</td>
-                                <td>Keterangan</td>
-                                <td colspan="2">Opsi</td>
+                                <th>Kode Unit</th>
+                                <th>Harga</th>
+                                <th>Luas</th>
+                                <th>Luas Tanah</th>
+                                <th>Keterangan</th>
+                                <th colspan="2">Opsi</th>
                             </tr>
                             @foreach ($unit as $u)
                             <tr>

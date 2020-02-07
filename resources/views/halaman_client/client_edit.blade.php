@@ -16,13 +16,12 @@
                     @endif    --}}
 
                     <a href="/home/client" class="btn btn-warning">Kembali</a>
-                    <br>
-                    <br>
                     <div class="card mt-5">
                         <div class="card-body">
                         <form action="/home/client/update/{{ $client->id_client}}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
+                            
                             {{--  form isi nama client  --}}
                             <div class="form-group">
                                 <label>Nama Client</label>
