@@ -14,7 +14,7 @@
                             {{ session('status') }}
                         </div>
                     @endif    --}}
-                    <a href="/home/marketing/tambah_marketing" class="btn btn-success">Tambah Marketing</a>
+                    <a href="{{ route('tambah_marketing') }}" class="btn btn-success">Tambah Marketing</a>
                     <br>
                     <br>
                     <table class="table table-bordered table-hover table-striped">

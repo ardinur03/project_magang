@@ -15,7 +15,7 @@
                         </div>
                     @endif    --}}
 
-                    <a href="/home/unit" class="btn btn-warning">Kembali</a>
+                    <a href="{{ route('index_unit') }}" class="btn btn-warning">Kembali</a>
                     <div class="card-body">
                     <form action="/home/unit/proses/{{ $unit->id_unit }}" method="POST">
                         {{ csrf_field() }}

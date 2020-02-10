@@ -18,7 +18,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif    --}}
-                        <a href="/home/unit/tambah_unit" class="btn btn-success">Tambah unit</a>
+                        <a href="{{ route('tambah_unit') }}" class="btn btn-success">Tambah unit</a>
                         <br>
                         <br>
                         <table  class="table table-bordered table-hover table-striped">

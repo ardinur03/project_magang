@@ -15,8 +15,8 @@
                         </div>
                     @endif  --}}
 
-                    <a href="/home/unit" class="btn btn-warning">Kembali</a>
-                    <form action="/home/unit/proses" method="POST">
+                    <a href="{{ route('index_unit') }}" class="btn btn-warning">Kembali</a>
+                    <form action="{{ route('proses_tambah') }}" method="POST">
                         {{ csrf_field() }}
 
                         {{--  form isi kode unit  --}}
