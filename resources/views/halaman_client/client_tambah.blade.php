@@ -15,12 +15,12 @@
                         </div>
                     @endif    --}}
 
-                    <a href="/home/client" class="btn btn-warning">Kembali</a>
+                    <a href="{{ route('index_client') }}" class="btn btn-warning">Kembali</a>
                     <br>
                     <br>
                     <div class="card mt-5">
                         <div class="card-body">
-                        <form action="/home/client/proses" method="POST">
+                        <form action="{{ route('proses_simpan') }}" method="POST">
                             {{ csrf_field() }}
 
                             {{--  form isi nama client  --}}
