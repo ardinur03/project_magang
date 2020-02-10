@@ -17,12 +17,12 @@ class unitController extends Controller
     }
 
 
-    // metod tambah unit
+    // metod tombol tambah unit
     public function tambah () {
         // halaman view tambah unit
         return view ('halaman_unit.tambah_unit');
     }
-    // metod proses untuk mengirim data unit
+    // metod proses untuk mengirim data unit ke database
     public function proses (Request $request) {
         // memvalidasikan form
         $this->validate($request, [
