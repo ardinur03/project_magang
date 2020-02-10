@@ -11,7 +11,7 @@ class marketingController extends Controller
     //rute pindah pindah ke halaman index
     public function index () {
         $marketing = Marketing::all();
-        return view ('halaman_marketing.marketing', ['marketing' => $marketing]);
+        return view('halaman_marketing.marketing', ['marketing' => $marketing]);
     }
 
     // metod untuk menghapus

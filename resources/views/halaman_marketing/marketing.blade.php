@@ -18,6 +18,7 @@
                     <br>
                     <br>
                     <table class="table table-bordered table-hover table-striped">
+                        <thead>
                         <tr>
                             <th>Nama Client</th>
                             <th>Tanggal Lahir</th>
@@ -30,6 +31,8 @@
                             <th>Created By</th>
                             <th colspan="2">Opsi</th>
                         </tr>
+                        </thead>
+                        <tbody>
                         @foreach ($marketing as $m)
                         <tr>
                             <td>{{ $m->nama }}</td>
@@ -40,7 +43,7 @@
                             <td>{{ $m->no_hp }}</td>
                             <td>{{ $m->email }}</td>
                             <td>{{ $m->ket }}</td>
-                            <td>{{ $m->created_by }}</td>
+                            <td>{{ $m->client->nama_client }}</td>
                             <td>
                                 <a href="/home/marketing/edit/{{ $m->id_marketing }}" class="btn btn-warning">edit</a>
                             </td>
@@ -49,6 +52,7 @@
                             </td>
                         </tr>
                         @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
