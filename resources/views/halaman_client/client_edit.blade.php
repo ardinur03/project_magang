@@ -15,7 +15,7 @@
                         </div>
                     @endif    --}}
 
-                    <a href="/home/client" class="btn btn-warning">Kembali</a>
+                    <a href="{{ route('index_client') }}" class="btn btn-warning">Kembali</a>
                     <div class="card mt-5">
                         <div class="card-body">
                         <form action="/home/client/update/{{ $client->id_client}}" method="POST">
