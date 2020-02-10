@@ -19,7 +19,7 @@
                         </div>
                     @endif    --}}
                 <div>
-                <a href="/home/client/tambah" class="btn btn-success">Tambah Client</a>
+                <a href="{{ route('client_tambah') }}" class="btn btn-success">Tambah Client</a>
                 <br/>
                 <br/>
                 <table class="table table-bordered table-hover table-striped">
