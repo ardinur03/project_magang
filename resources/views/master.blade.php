@@ -52,7 +52,7 @@
                         <a href="/home">Home /</a>
                         <a href="/home/unit">Unit /</a>
                         <a href="/home/client">Client /</a>
-                        <a href="#">Marketing /</a>
+                        <a href="/home/marketing">Marketing /</a>
                         <a href="#">Pembelian</a>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
