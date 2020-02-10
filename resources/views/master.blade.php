@@ -55,10 +55,10 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/home/unit">Unit</a></li>
-                        <li><a href="/home/client">Client</a></li>
-                        <li><a href="/home/marketing">Marketing</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('index_unit') }}">Unit</a></li>
+                        <li><a href="{{ route('index_client') }}">Client</a></li>
+                        <li><a href="{{ route('index_marketing') }}">Marketing</a></li>
                         <li><a href="#">Pembelian</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
