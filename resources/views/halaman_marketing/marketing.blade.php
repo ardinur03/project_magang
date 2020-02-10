@@ -20,7 +20,6 @@
                     <table class="table table-bordered table-hover table-striped">
                         <tr>
                             <th>Nama Client</th>
-                            <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
                             <th>Jenis Kelamin</th>
                             <th>Alamat</th>
@@ -29,15 +28,15 @@
                             <th>Email</th>
                             <th>Keterangan</th>
                             <th>Created By</th>
-                            <th>Opsi</th>
+                            <th colspan="2">Opsi</th>
                         </tr>
                         @foreach ($marketing as $m)
                         <tr>
                             <td>{{ $m->nama }}</td>
-                            <td>{{ $m->jenis_kelamin }}</td>
                             <td>{{ $m->tanggal_lahir }}</td>
-                            <td>{{ $m->no_ktp }}</td>
+                            <td>{{ $m->jenis_kelamin }}</td>
                             <td>{{ $m->alamat }}</td>
+                            <td>{{ $m->no_ktp }}</td>
                             <td>{{ $m->no_hp }}</td>
                             <td>{{ $m->email }}</td>
                             <td>{{ $m->ket }}</td>
