@@ -10,14 +10,17 @@
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Client</strong></div>
-    
                 <div class="panel-body bg-success">
                     {{--  @if (session('status'))
                         <div class="alert alert-success">
                         {{ session('status') }}
                         </div>
                     @endif    --}}
+                    <div class="panel-heading">
+                        <ol class="breadcrumb">
+                            <li class="active">Client</li>
+                        </ol>
+                    </div>
                 <div>
                 <a href="{{ route('client_tambah') }}" class="btn btn-success">Tambah Client</a>
                 <br/>
