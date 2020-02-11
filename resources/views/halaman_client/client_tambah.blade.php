@@ -12,6 +12,7 @@
                             {{ session('status') }}
                         </div>
                     @endif    --}}
+                    <div class="pull-left"><b>Tambah Client</b></div><br>
                     <div class="panel-heading">
                         <ol class="breadcrumb">
                             <li><a href="{{ route('index_client') }}">Client</a></li>
@@ -37,8 +38,8 @@
                             {{--  form isi tempat lahir  --}}
                             <div class="form-group">
                                 <label>Tempat Lahir</label>
-                                <select name="tempat_lahir" class="form-control">
-                                    <option>Tempat Lahir...</option>
+                                <select name="tempat_lahir" class="form-control" placeholder="Tempat Lahir...">
+                                    <option  value="" selected>Tempat Lahir...</option>
                                     <option value="Bandung">Bandung</option>
                                     <option value="Jakarta">Jakarta</option>
                                     <option value="Surabaya">Surabaya</option>
