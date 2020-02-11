@@ -27,7 +27,7 @@ Route::get('/home/unit/tambah_unit', 'unitController@tambah')->name('tambah_unit
 // rute proses unit
 Route::put('/home/unit/proses/{id_unit}', 'unitController@update');
 // rute edit unit
-Route::get('/home/unit/edit/{id_unit}', 'unitController@edit');
+Route::get('/home/unit/edit/{id_unit}', 'unitController@edit')->name('edit_unit');
 // rute tambah
 Route::post('/home/unit/proses', 'unitController@proses')->name('proses_tambah');
 // rute hapus unit
