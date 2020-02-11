@@ -11,13 +11,18 @@
         <div class="row">
             <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><strong><h4>Unit</h4></strong></div>
-                    <div class="panel-body bg-info">
+                    
+                    <div class="panel-body bg-success">
                         {{--  @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}
                             </div>
                         @endif    --}}
+                        <div class="panel-heading">
+                            <ol class="breadcrumb">
+                                <li class="active">Unit</li>
+                            </ol>
+                        </div>
                         <a href="{{ route('tambah_unit') }}" class="btn btn-success">Tambah unit</a>
                         <br>
                         <br>
