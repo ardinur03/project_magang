@@ -12,6 +12,7 @@
                             {{ session('status') }}
                         </div>
                     @endif    --}}
+                    <div class="pull-left"><b>Edit Client</b></div><br>
                     <div class="panel-heading">
                         <ol class="breadcrumb">
                             <li><a href="{{ route('index_client') }}">Client</a></li>
