@@ -6,16 +6,18 @@
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
-                <div class="panel-heading">Tambah Unit</div>
-
-                <div class="panel-body">
+                <div class="panel-body bg-success">
                       {{--  @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif  --}}
-
-                    <a href="{{ route('index_unit') }}" class="btn btn-warning">Kembali</a>
+                    <div class="panel-heading">
+                        <ol class="breadcrumb">
+                            <li><a href="{{ route('index_unit') }}">Unit</a></li>
+                            <li class="active">Tambah Unit</li>
+                        </ol>
+                    </div>
                     <form action="{{ route('proses_tambah') }}" method="POST">
                         {{ csrf_field() }}
 
