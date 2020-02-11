@@ -12,13 +12,14 @@
                             {{ session('status') }}
                         </div>
                     @endif  --}}
+                    <div class="pull-left"><b>Tambah Unit</b></div><br>
                     <div class="panel-heading">
                         <ol class="breadcrumb">
                             <li><a href="{{ route('index_unit') }}">Unit</a></li>
                             <li class="active">Tambah Unit</li>
                         </ol>
                     </div>
-                    <form action="{{ route('proses_tambah') }}" method="POST">
+                    <form action="/home/unit/proses" method="POST">
                         {{ csrf_field() }}
 
                         {{--  form isi kode unit  --}}
