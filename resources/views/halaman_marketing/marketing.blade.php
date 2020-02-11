@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Marketing</div>
 
-                <div class="panel-body bg-success">
+                <div class="panel-body bg-success table-responsive">
                     {{--  @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
