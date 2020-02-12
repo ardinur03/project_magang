@@ -6,18 +6,19 @@
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
-                <div class="panel-heading">Tambah Marketing</div>
-
-                <div class="panel-body">
+                <div class="panel-body bg-success">
                     {{--  @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif    --}}
-
-                    <a href="{{ route('index_marketing') }}" class="btn btn-warning">Kembali</a>
-                    <br>
-                    <br>
+                    <div class="pull-left"><b>Tambah Marketing</b></div><br>
+                    <div class="panel-heading">
+                        <ol class="breadcrumb">
+                            <li><a href="{{ route('index_marketing') }}">Marketing</a></li>
+                            <li class="active">Tambah Marketing</li>
+                        </ol>
+                    </div>
                     <div class="card mt-5">
                         <div class="card-body">
                         <form action="{{ route('proses_tambah') }}" method="POST">
