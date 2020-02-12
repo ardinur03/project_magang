@@ -26,4 +26,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function client()
+    {
+
+        return $this->belongsTo('App\Client', 'id_client');
+    }
+
+    public function marketing()
+    {
+
+        return $this->belongsTo('App\Marketing', 'id_marketing');
+    }
 }
