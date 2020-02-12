@@ -37,8 +37,8 @@
                             {{--  isi form jenis kelamin  --}}
                             <div class="form-group">
                                 <label>Jenis Kelamin</label><br>
-                                <input type="radio"name="jenis_kelamin" value="L">L <br>
-                                <input type="radio" name="jenis_kelamin" value="P">P
+                                <input type="radio"name="jenis_kelamin" value="L"> Laki-laki <br>
+                                <input type="radio" name="jenis_kelamin" value="P"> Perempuan
                                 @if($errors->has('jenis_kelamin'))
                                     <div class="text-danger">
                                         {{ $errors->first('jenis_kelamin', '*Jenis Kelamin harus terisi !!!')}}
