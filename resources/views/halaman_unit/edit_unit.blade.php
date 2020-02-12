@@ -20,7 +20,7 @@
                         </ol>
                     </div>
                     <div class="card-body">
-                    <form action="/home/unit/proses/{{ $unit->id_unit }}" method="POST">
+                    <form action="{{ route('proses_edit_unit', $unit->id_unit) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
 
