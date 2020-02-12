@@ -26,6 +26,7 @@
                     <br>
                     <br>
                     <table class="table table-bordered table-hover table-striped">
+                        <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nama Client</th>
@@ -40,27 +41,30 @@
                                 <th>Created By</th>
                                 <th colspan="2">Opsi</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             @foreach($client as $no => $c)
-                            <tr>
-                                <td>{{ $no+1 }}</td>
-                                <td>{{ $c->nama_client }}</td>
-                                <td>{{ $c->tempat_lahir }}</td>
-                                <td>{{ $c->tanggal_lahir }}</td>
-                                <td>{{ $c->jenis_kelamin }}</td>
-                                <td>{{ $c->alamat }}</td>
-                                <td>{{ $c->no_ktp }}</td>
-                                <td>{{ $c->no_hp }}</td>
-                                <td>{{ $c->email }}</td>
-                                <td>{{ $c->ket }}</td>
-                                <td>{{ $c->user_create->name }}</td>
-                                <td>
-                                    <a href="/home/client/edit/{{ $c->id_client }}" class="btn btn-warning">Edit</a>
-                                </td>
-                                <td>
-                                    <a href="/home/client/hapus/{{ $c->id_client }}" class="btn btn-danger">Hapus</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $no+1 }}</td>
+                                    <td>{{ $c->nama_client }}</td>
+                                    <td>{{ $c->tempat_lahir }}</td>
+                                    <td>{{ $c->tanggal_lahir }}</td>
+                                    <td>{{ $c->jenis_kelamin }}</td>
+                                    <td>{{ $c->alamat }}</td>
+                                    <td>{{ $c->no_ktp }}</td>
+                                    <td>{{ $c->no_hp }}</td>
+                                    <td>{{ $c->email }}</td>
+                                    <td>{{ $c->ket }}</td>
+                                    <td>{{ $c->user_create->name }}</td>
+                                    <td>
+                                        <a href="{{ route('edit_client', $c->id_client) }}" class="btn btn-warning">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('hapus_client',$c->id_client) }}" class="btn btn-danger">Hapus</a>
+                                    </td>
+                                </tr>
                             @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
