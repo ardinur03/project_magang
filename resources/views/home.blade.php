@@ -16,6 +16,10 @@
                     @endif  
 
                     Kamu berhasil login
+                    <br>
+                    <br>
+                    <br>
+                    
                 </div>
             </div>
         </div>
