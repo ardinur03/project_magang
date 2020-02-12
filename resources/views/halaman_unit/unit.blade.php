@@ -48,7 +48,7 @@
                                     <a href="{{ route('edit_unit', $u->id_unit) }}" class="btn btn-warning">edit</a>
                                 </td>
                                 <td>
-                                    <a href="/home/unit/hapus/{{ $u->id_unit }}" class="btn btn-danger">hapus</a>
+                                    <a href="{{ route('hapus_unit', $u->id_unit) }}" class="btn btn-danger">hapus</a>
                                 </td>
                             </tr>
                             @endforeach
