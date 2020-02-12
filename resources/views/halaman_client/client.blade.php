@@ -52,7 +52,7 @@
                                 <td>{{ $c->no_hp }}</td>
                                 <td>{{ $c->email }}</td>
                                 <td>{{ $c->ket }}</td>
-                                <td>{{ $c->crated_by }}</td>
+                                <td>{{ $c->user_create->name }}</td>
                                 <td>
                                     <a href="/home/client/edit/{{ $c->id_client }}" class="btn btn-warning">Edit</a>
                                 </td>
