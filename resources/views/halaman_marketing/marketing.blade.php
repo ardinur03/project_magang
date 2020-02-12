@@ -43,7 +43,7 @@
                             <td>{{ $m->no_hp }}</td>
                             <td>{{ $m->email }}</td>
                             <td>{{ $m->ket }}</td>
-                            <td>{{ $m->client->nama_client }}</td>
+                            <td>{{ $m->user_create->name }}</td>
                             <td>
                                 <a href="/home/marketing/edit/{{ $m->id_marketing }}" class="btn btn-warning">edit</a>
                             </td>
