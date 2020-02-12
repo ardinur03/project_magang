@@ -19,7 +19,7 @@
                             <li class="active">Tambah Unit</li>
                         </ol>
                     </div>
-                    <form action="/home/unit/proses" method="POST">
+                    <form action="{{ route('proses_tambah_unit') }}" method="POST">
                         {{ csrf_field() }}
 
                         {{--  form isi kode unit  --}}
