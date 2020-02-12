@@ -10,4 +10,13 @@ class pembelianController extends Controller
     public function index () {
         return view ('halaman_pembelian.pembelian');
     }
+
+    /*// proses tambah pembelian
+    public function proses () {
+        // memvalidasi
+        $this->validate($request, [ 
+            
+        ]);
+    } */
+    
 }
