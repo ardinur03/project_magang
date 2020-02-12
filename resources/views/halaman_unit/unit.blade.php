@@ -27,31 +27,35 @@
                         <br>
                         <br>
                         <table class="table table-bordered table-hover table-striped">
-                            <tr>
-                                <th>No</th>
-                                <th>Kode Unit</th>
-                                <th>Harga</th>
-                                <th>Luas</th>
-                                <th>Luas Tanah</th>
-                                <th>Keterangan</th>
-                                <th colspan="2">Opsi</th>
-                            </tr>
-                            @foreach ($unit as $no => $u)
-                            <tr>
-                                <td>{{ $no+1 }}</td>
-                                <td>{{ $u->kode_unit }}</td>
-                                <td>{{ $u->harga }}</td>
-                                <td>{{ $u->luas }}</td>
-                                <td>{{ $u->luas_tanah }}</td>
-                                <td>{{ $u->ket }}</td>
-                                <td>
-                                    <a href="{{ route('edit_unit', $u->id_unit) }}" class="btn btn-warning">edit</a>
-                                </td>
-                                <td>
-                                    <a href="{{ route('hapus_unit', $u->id_unit) }}" class="btn btn-danger">hapus</a>
-                                </td>
-                            </tr>
-                            @endforeach
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Kode Unit</th>
+                                    <th>Harga</th>
+                                    <th>Luas</th>
+                                    <th>Luas Tanah</th>
+                                    <th>Keterangan</th>
+                                    <th colspan="2">Opsi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($unit as $no => $u)
+                                    <tr>
+                                        <td>{{ $no+1 }}</td>
+                                        <td>{{ $u->kode_unit }}</td>
+                                        <td>{{ $u->harga }}</td>
+                                        <td>{{ $u->luas }}</td>
+                                        <td>{{ $u->luas_tanah }}</td>
+                                        <td>{{ $u->ket }}</td>
+                                        <td>
+                                            <a href="{{ route('edit_unit', $u->id_unit) }}" class="btn btn-warning">edit</a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('hapus_unit', $u->id_unit) }}" class="btn btn-danger">hapus</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
