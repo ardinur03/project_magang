@@ -66,9 +66,9 @@ Route::put('/home/marketing/update/{id_marketing}', 'marketingController@update'
 
 
 //Pembelian 
-Route::get('/pembelian', 'pembelianController@index')->nama('index_pembelian');
+Route::get('/home/pembelian', 'pembelianController@index')->name('index_pembelian');
 
 
 
 // tambahan doang
-Route::get('/home/coba', 'homeController@coba');
+// Route::get('/home/coba', 'homeController@coba');
