@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // panggil model client
-use App\client;
+use App\Client;
 
 class clientController extends Controller
 {
     public function pindah () {
     // mengambil data client dari data base
     $client = Client::all();
-
     //tembak data ke view
         return view ('halaman_client.client', ['client' => $client]);
+
     }
 
     // method untuk pindah ke view tambah
