@@ -17,4 +17,8 @@ class client extends Model {
         return $this->belongsTo('App\User', 'crated_by');
     }
     
+    // untuk tersambung ke pembelian
+    public function pembelian() {
+        return $this->belongsTo('App\Pembelian', 'id_pembelian');
+    }
 }
