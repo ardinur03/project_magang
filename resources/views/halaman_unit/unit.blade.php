@@ -41,7 +41,7 @@
                             <tbody>
                                 @foreach ($unit as $no => $u)
                                     <tr>
-                                        <td>{{ $no+1 }}</td>
+                                        <td class="text-center">{{ $no+1 }}</td>
                                         <td>{{ $u->kode_unit }}</td>
                                         <td>{{ $u->harga }}</td>
                                         <td>{{ $u->luas }}</td>

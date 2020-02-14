@@ -45,7 +45,7 @@
                         <tbody>
                             @foreach($client as $no => $c)
                                 <tr>
-                                    <td>{{ $no+1 }}</td>
+                                    <td class="text-center">{{ $no+1 }}</td>
                                     <td>{{ $c->nama_client }}</td>
                                     <td>{{ $c->tempat_lahir }}</td>
                                     <td>{{ $c->tanggal_lahir }}</td>
@@ -55,7 +55,7 @@
                                     <td>{{ $c->no_hp }}</td>
                                     <td>{{ $c->email }}</td>
                                     <td>{{ $c->ket }}</td>
-                                    <td>{{ $c->user_create->name }}</td>
+                                    <td class="text-center">{{ $c->user_create->name }}</td>
                                     <td>
                                         <a href="{{ route('edit_client', $c->id_client) }}" class="btn btn-warning">Edit</a>
                                     </td>
