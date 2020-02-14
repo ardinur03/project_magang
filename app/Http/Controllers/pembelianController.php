@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pembelian;
-use App\Unit;
 class pembelianController extends Controller
 {
     //index pembelian
@@ -23,10 +22,12 @@ class pembelianController extends Controller
         ]);
         // proses input ke database
         Pembelian::create([
-            'pilih_unit' => $request->pilih_unit,
-            'pilih_client' => $request->pilih_client,
-            'pilih_marketing' => $request->pilih_marketing,
+            'pilih_unit'     => $request->pilih_unit,
+            'pilih_client'   => $request->pilih_client,
+            'pilih_marketing'=> $request->pilih_marketing,
         ]);
+        // mengembalika 
+        return redirect ('/home/pembelian');
     } 
     
 }
