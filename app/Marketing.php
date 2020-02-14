@@ -19,5 +19,9 @@ class Marketing extends Model
         return $this->belongsTo('App\User', 'created_by');
     }
    
+    // untuk tersambung dengan pembelian
+    public function pembelian() {
+        return $this->belongsTo('App\Pembelian', 'id_pembelian');
+    }
     
 }
