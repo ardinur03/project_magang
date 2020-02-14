@@ -24,7 +24,8 @@
                     <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Nama Client</th>
+                                <th>No</th>
+                                <th>Nama Marketing</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Alamat</th>
@@ -37,8 +38,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach ($marketing as $m)
+                                @foreach ($marketing as $no => $m)
                                     <tr>
+                                        <td class="text-center">{{ $no+1 }}</td>
                                         <td>{{ $m->nama }}</td>
                                         <td>{{ $m->tanggal_lahir }}</td>
                                         <td>{{ $m->jenis_kelamin }}</td>
@@ -47,7 +49,7 @@
                                         <td>{{ $m->no_hp }}</td>
                                         <td>{{ $m->email }}</td>
                                         <td>{{ $m->ket }}</td>
-                                        <td>{{ $m->user_create->name }}</td>
+                                        <td class="text-center">{{ $m->user_create->name }}</td>
                                         <td>
                                             <a href="{{ route('edit_marketing', $m->id_marketing) }}" class="btn btn-warning">edit</a>
                                         </td>
