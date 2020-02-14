@@ -81,6 +81,4 @@ class unitController extends Controller
        return redirect ('/home/unit');
     }
 
-    
-
 }
