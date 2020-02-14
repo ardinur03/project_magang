@@ -112,7 +112,7 @@
                             {{--  form isi email  --}}
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="text" name="email" class="form-control" placeholder="Email..." value="{{ $client->email  }}">
+                                <input type="email" name="email" class="form-control" placeholder="Email..." value="{{ $client->email  }}">
                                 @if($errors->has('email'))
                                     <div class="text-danger">
                                         {{ $errors->first('email')}}
