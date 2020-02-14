@@ -65,10 +65,11 @@ Route::put('/home/marketing/update/{id_marketing}', 'marketingController@update'
 
 
 
-//Pembelian 
+// rute view Pembelian 
 Route::get('/home/pembelian', 'pembelianController@index')->name('index_pembelian');
-
+// rute proses pembelian setelah klik simpan
+Route::post('/home/pembelian/proses', 'pembelianController@proses')->name('proses_simpan');
 
 
 // tambahan doang
-// Route::get('/home/coba', 'homeController@coba');
+// Route::get('/home/coba', 'homeController@three_Sum');
