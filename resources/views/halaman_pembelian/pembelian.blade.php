@@ -20,7 +20,7 @@
                     </div>
                     <a href="/home" class="btn btn-warning">Kembali Ke Home</a>
                     <form action="{{ route('proses_simpan') }}" method="POST">
-                        {{-- {{ crsf_field() }} --}}
+                        {{ csrf_field() }}
 
                         {{-- pilih unit --}}
                         <div class="form-group">
