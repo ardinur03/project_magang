@@ -19,6 +19,12 @@
                             <li class="active">Tambah Unit</li>
                         </ol>
                     </div>
+                    @if ($errors->any())
+                      <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button> 
+                        Mohon isi form sebelum men-submit!!!
+                    </div>
+                    @endif
                     <form action="{{ route('proses_tambah_unit') }}" method="POST">
                         {{ csrf_field() }}
 
