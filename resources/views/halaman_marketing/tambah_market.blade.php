@@ -19,6 +19,12 @@
                             <li class="active">Tambah Marketing</li>
                         </ol>
                     </div>
+                    @if ($errors->any())
+                      <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button> 
+                        Mohon isi form sebelum men-submit!!!
+                    </div>
+                    @endif
                     <div class="card mt-5">
                         <div class="card-body">
                         <form action="{{ route('proses_tambah') }}" method="POST">
