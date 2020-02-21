@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pembelian;
+use App\Unit;
+use App\Client;
+use App\Marketing;
+
 class pembelianController extends Controller
 {
     //index pembelian
-    public function index () {
-        $pembelian = Pembelian::all();
-        return view ('halaman_pembelian.pembelian', ['pembelian' => $pembelian]);
+    public function index () { 
+        $unit      = Unit::all();
+        $client    = Client::all();
+        $marketing = Marketing::all();
+        return view ('halaman_pembelian.pembelian', ['unit' => $unit, 'client' => $client, 'marketing' => $marketing]);
     }
 
     // proses tambah pembelian <- rute('proses_tambah)
@@ -22,11 +28,11 @@ class pembelianController extends Controller
         ]);
         // proses input ke database
         Pembelian::create([
-            'pilih_unit'     => $request->pilih_unit,
-            'pilih_client'   => $request->pilih_client,
-            'pilih_marketing'=> $request->pilih_marketing,
+            'id_unit'     => $request->pilih_unit,
+            'id_client'   => $request->pilih_client,
+            'id_marketing'=> $request->pilih_marketing,
         ]);
-        // mengembalika 
+        // mengembalikan
         return redirect ('/home/pembelian');
     } 
     
