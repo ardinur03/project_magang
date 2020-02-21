@@ -40,7 +40,7 @@ Route::get('/home/client', 'clientController@pindah')->name('index_client');
 // rute tambah client
 Route::get('/home/client/tambah', 'clientController@tambah')->name('client_tambah');
 // rute proses simpan client
-Route::post('/home/client/proses', 'clientController@proses')->name('proses_simpan');
+Route::post('/home/client/proses', 'clientController@proses')->name('tambah_client');
 // rute hapus client
 Route::get('/home/client/hapus/{id_client}', 'clientController@delete')->name('hapus_client');
 // rute edit client
@@ -69,6 +69,9 @@ Route::put('/home/marketing/update/{id_marketing}', 'marketingController@update'
 Route::get('/home/pembelian', 'pembelianController@index')->name('index_pembelian');
 // rute proses pembelian setelah klik simpan
 Route::post('/home/pembelian/proses', 'pembelianController@proses')->name('proses_simpan');
+// rute menuju list pembelian 
+Route::get('/home/list_pembelian', 'list_pembelianController@index')->name('index_list_pembelian');
+
 
 
 // tambahan doang
