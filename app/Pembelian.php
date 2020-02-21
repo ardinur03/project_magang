@@ -13,16 +13,16 @@ class Pembelian extends Model
 
     // unit
     public function pilih_unit() {
-        return $this->hasOne('App\Unit', 'id_unit');
+        return $this->belongsTo('App\Unit', 'id_unit');
     }
 
     // client
     public function pilih_client() {
-        return $this->hasOne('App\Client', 'id_client');
+        return $this->belongsTo('App\Client', 'id_client');
     }
 
     // marketing
     public function pilih_marketing() {
-        return $this->hasOne('App\Marketing', 'id_marketing');
+        return $this->belongsTo('App\Marketing', 'id_marketing');
     }
 }
