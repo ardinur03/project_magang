@@ -39,8 +39,7 @@ class marketingController extends Controller
             'alamat' => 'required',
             'no_hp' => 'required',
             'email' => 'required',
-            'ket' => 'required',
-            'created_by' => 'required'
+            'ket' => 'required'
         ]);
         // proses input
         Marketing::create([
@@ -52,7 +51,7 @@ class marketingController extends Controller
             'no_hp'=> $request->no_hp,
             'email'=> $request->email,
             'ket'=> $request->ket,
-            'created_by'=> $request->created_by,
+            'created_by'=> auth()->user()->id
         ]);
         // mengmbalikan
         return redirect ('/home/marketing');
@@ -75,8 +74,7 @@ class marketingController extends Controller
             'alamat' => 'required',
             'no_hp' => 'required',
             'email' => 'required',
-            'ket' => 'required',
-            'created_by' => 'required'
+            'ket' => 'required'
         ]);
         // proses edit marketing
         $marketing = Marketing::find($id_marketing);
@@ -88,7 +86,7 @@ class marketingController extends Controller
         $marketing->no_hp = $request->no_hp;
         $marketing->email = $request->email;
         $marketing->ket = $request->ket;
-        $marketing->created_by = $request->created_by;
+        $marketing->created_by = auth()->user()->id;
         $marketing->save();
         // mengembalikkan
         return redirect ('/home/marketing');
