@@ -10,7 +10,6 @@ class Pembelian extends Model
     protected $table = 'pembelian';
     protected $fillable = ['id_unit', 'id_client', 'id_marketing'];
     protected $primaryKey = 'id_pembelian';
-
     // unit
     public function pilih_unit() {
         return $this->belongsTo('App\Unit', 'id_unit');
