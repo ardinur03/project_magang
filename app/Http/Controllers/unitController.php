@@ -41,7 +41,7 @@ class unitController extends Controller
             'ket'       => $request->ket
         ]);
         // mengembalikkan
-        return redirect ('/home/unit');
+        return redirect ('/home/unit')->with(['success' => 'Data Unit berhasil di tambahkan !!!']);
     }
 
 
@@ -69,7 +69,7 @@ class unitController extends Controller
         $unit->ket = $request->ket;
         $unit->save();
         // mengembalikkan
-        return redirect ('/home/unit');
+        return redirect ('/home/unit')->with(['info' => 'Data unit sudah di perbaharui !!!']);
     }
 
 
@@ -78,7 +78,7 @@ class unitController extends Controller
        $unit = Unit::find($id_unit);
        $unit->delete();
        // mengembalikkan
-       return redirect ('/home/unit');
+       return redirect ('/home/unit')->with(['warning' => 'Data unit telah terhapus !!!']);
     }
 
 }
