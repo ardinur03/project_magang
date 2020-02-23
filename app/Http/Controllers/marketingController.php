@@ -19,7 +19,7 @@ class marketingController extends Controller
         $marketing = Marketing::find($id_marketing);
         $marketing->delete();
         // mengembalikan view
-        return redirect ('/home/marketing');
+        return redirect ('/home/marketing')->with(['warning' => 'Data Marketing berhasil di hapus !!!']);
     }
 
     // metod tombol tambah marketing
@@ -27,7 +27,6 @@ class marketingController extends Controller
         // halaman view tambah unit
         return view ('halaman_marketing.tambah_market');
     }
-
     // metod proses untuk mengirim data marketing ke database
     public function proses (Request $request) {
         // memvalidasikan form marketing
@@ -54,7 +53,7 @@ class marketingController extends Controller
             'created_by'=> auth()->user()->id
         ]);
         // mengmbalikan
-        return redirect ('/home/marketing');
+        return redirect ('/home/marketing')->with(['success' => 'Data Marketing behasil di tambahkan !!!']);
     }
 
     // metod view edit marketing
@@ -89,6 +88,6 @@ class marketingController extends Controller
         $marketing->created_by = auth()->user()->id;
         $marketing->save();
         // mengembalikkan
-        return redirect ('/home/marketing');
+        return redirect ('/home/marketing')->with(['info' => 'Data Marketing berhasil di perbaharui !!!']);
     }
 }

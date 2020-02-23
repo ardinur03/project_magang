@@ -21,7 +21,6 @@ class clientController extends Controller
         // tembak ke view client tambah blade
         return view ('halaman_client.client_tambah');
     }
-
     // method untuk menambahkan client
     public function proses (Request $request) {
         // memvalidasi form
@@ -50,7 +49,7 @@ class clientController extends Controller
             'crated_by' => auth()->user()->id 
         ]);
         // mengembalikan ke view
-        return redirect('/home/client');
+        return redirect('/home/client')->with(['success' => 'Data Client berhasil di tambahkan !!!']);
     }
 
     // method untuk menghapus client
@@ -58,7 +57,7 @@ class clientController extends Controller
         $client = Client::find($id_client);
         $client->delete(); 
         // mengembalikan
-        return redirect ('/home/client');
+        return redirect ('/home/client')->with(['warning' => 'Data Client berhasil di hapus !!!']);
     }
 
     // method untuk edit client
@@ -95,7 +94,7 @@ class clientController extends Controller
         $client ->crated_by = auth()->user()->id;
         $client->save();
         // mengembalikan
-        return redirect ('/home/client');
+        return redirect ('/home/client')->with(['info' => 'Data Client berhasil di perbaharui !!!']);
     }
     
 
