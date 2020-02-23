@@ -6,58 +6,44 @@
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
-                <div class="panel-body bg-success">
-                    {{-- @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif   --}}
-                    
-                   
-                    {{-- @if ($message = Session::get('success'))
-                      <div class="alert alert-success alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button> 
-                          <strong>{{ $message }}</strong>
-                      </div>
-                    @endif
-                
+                <div class="panel-body">
+                {{--
                     @if ($message = Session::get('error'))
                       <div class="alert alert-danger alert-block">
                         <button type="button" class="close" data-dismiss="alert">×</button> 
                         <strong>{{ $message }}</strong>
                       </div>
                     @endif
-                
-                    @if ($message = Session::get('warning'))
-                      <div class="alert alert-warning alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button> 
-                        <strong>{{ $message }}</strong>
-                    </div>
-                    @endif
-                
-                    @if ($message = Session::get('info'))
-                      <div class="alert alert-info alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button> 
-                        <strong>{{ $message }}</strong>
-                      </div>
-                    @endif --}}
-                
+                     --}}
                     
-
-
-                    <div class="pull-left"><b>Pembelian</b></div><br>
-                    <div class="panel-heading">
+                    <div class="pull-left"><b>Pembelian</b></div><hr>
+                    {{-- <div class="panel-heading">
                         <ol class="breadcrumb">
                             <li class="active">Pembelian</li>
                         </ol>
-                    </div>
+                    </div> --}}
+
+                    {{-- alert validasi kosong awal --}}
                     @if ($errors->any())
                       <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button> 
                         Mohon isi form sebelum men-submit!!!
                     </div>
                     @endif
-                    <a href="{{ route('home') }}" class="btn btn-warning">Kembali Ke Home</a>
+                    {{-- alert validasi kosong akhir --}}
+
+                    {{-- alert sukses awal --}}
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                      <button type="button" class="close" data-dismiss="alert">×</button> 
+                        <strong>{{ $message }}</strong> &nbsp; &nbsp; &nbsp; &nbsp;
+                        <a href="{{ route('index_list_pembelian') }}" class="btn btn-warning">list Pembelian</a>
+                    </div>
+                    @endif
+                    {{-- alert sukses awal --}}
+
+                    
+                    
                     <form action="{{ route('proses_simpan') }}" method="POST">
                         {{ csrf_field() }}
 

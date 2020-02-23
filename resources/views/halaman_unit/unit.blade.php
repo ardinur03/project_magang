@@ -11,18 +11,46 @@
         <div class="row">
             <div class="col-md-12 col-md-offset-0">
                 <div class="panel panel-default">
-                    <div class="panel-body bg-success">
+                    <div class="panel-body">
                         {{--  @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}
                             </div>
                         @endif    --}}
-                        <div class="pull-left"><b>Data Unit</b></div><br>
+                        <div class="pull-left"><b>Data Unit</b></div><hr>
                         <div class="panel-heading">
                             <ol class="breadcrumb">
                                 <li class="active">Unit</li>
                             </ol>
                         </div>
+
+                        {{-- alert info awal --}}
+                            @if ($message = Session::get('info'))
+                            <div class="alert alert-info alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button> 
+                                <strong>{{ $message }}</strong>
+                            </div>
+                            @endif
+                        {{-- alert infp akhir --}}
+
+                        {{-- alert warning awal --}}
+                            @if ($message = Session::get('warning'))
+                                <div class="alert alert-warning alert-block">
+                                    <button type="button" class="close" data-dismiss="alert">×</button> 
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @endif
+                        {{-- alert warning akhir --}}
+
+                        {{-- alert sukses awal --}}
+                        @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button> 
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @endif
+                        {{-- alert sukses akhir --}}
+
                         <a href="{{ route('tambah_unit') }}" class="btn btn-success">Tambah unit</a>
                         <br>
                         <br>
