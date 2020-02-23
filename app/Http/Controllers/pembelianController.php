@@ -36,4 +36,35 @@ class pembelianController extends Controller
         return redirect ('/home/pembelian');
     } 
     
+    //passing data ke view
+    public function list_pembelian() {
+        $pembelian = Pembelian::all();        
+        return view ('halaman_pembelian.list_pembelian', ['pembelian' => $pembelian]);
+    }
+
+    // metod menuju ke view edit penjualan
+    public function edit_pembelian($id_pembelian) {
+        $pembelian = Pembelian::find($id_pembelian);
+        $pembeli = Pembelian::all();
+        $unit = Unit::all();
+        return view ('halaman_pembelian.edit_pembelian', ['pembelian'=>$pembelian, 'unit'=>$unit, 'pembeli'=>$pembeli]);
+    } 
+    // proses edit pembelian
+    public function edit_proses ($id_pembelian, Request $request) {
+        $pembelian = Pembelian::find($id_pembelian);
+        $pembelian->id_unit = $request->pilih_unit;
+        $pembelian->id_client = $request->pilih_client;
+        $pembelian->id_marketing = $request->pilih_marketing;
+        $pembelian->save();
+        // mengembalikan
+        return redirect ('/home/list_pembelian');
+    }
+
+    // proses hapus pembelian
+    public function hapus_pembelian ($id_pembelian) {
+        $pembelian = Pembelian::find($id_pembelian);
+        $pembelian->delete();
+        // mengembalikan 
+        return redirect ('/home/list_pembelian');
+    }
 }
