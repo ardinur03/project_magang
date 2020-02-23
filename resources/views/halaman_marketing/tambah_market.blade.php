@@ -120,17 +120,6 @@
                                 @endif
                             </div>
 
-                            {{--  isi form created BY  --}}
-                            <div class="form-group">
-                                <label>Created By</label>
-                                <input type="number" name="created_by" class="form-control" placeholder="Crated by...">
-                                @if($errors->has('created_by'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('created_by', '*Created By harus terisi !!!')}}
-                                    </div>
-                                @endif
-                            </div>
-
                             <div class="form-group">
                                 <input type="submit" class="btn btn-success" value="Simpan">
                             </div>
