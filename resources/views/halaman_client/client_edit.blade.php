@@ -6,13 +6,13 @@
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
-                <div class="panel-body bg-success">
+                <div class="panel-body">
                     {{--  @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif    --}}
-                    <div class="pull-left"><b>Edit Client</b></div><br>
+                    <div class="pull-left"><b>Edit Client</b></div><hr>
                     <div class="panel-heading">
                         <ol class="breadcrumb">
                             <li><a href="{{ route('index_client') }}">Client</a></li>
