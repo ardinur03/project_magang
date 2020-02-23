@@ -9,12 +9,12 @@
                 <div class="panel-body">
                 <div class="pull-left"><b>List Pembelian</b></div><br><br>
 
-                {{-- breadcrumb awal di gunakan jika ada fitur tambahan --}}
-                {{-- <div class="panel-heading">
+                {{-- breadcrumb awal  --}}
+                <div class="panel-heading">
                     <ol class="breadcrumb">
                        <li class="active">Pembelian</li>
                     </ol>
-                </div> --}} 
+                </div> 
                 {{-- breadcrumb akhir --}}
 
                     <table class="table table-bordered table-hover table-striped">
@@ -32,13 +32,13 @@
                                 <tr>
                                     <td class="text-center"> {{ $no+1 }} </td>
                                     <td>{{ $p->pilih_unit->kode_unit }}</td>
-                                    <td>{{$p->pilih_client->nama_client}}</td>
-                                    <td>{{$p->pilih_marketing->nama}}</td>
+                                    <td>{{ $p->pilih_client->nama_client }}</td>
+                                    <td>{{ $p->pilih_marketing->nama }}</td>
                                     <td class="text-center">
-                                        <a href="#" class="btn btn-warning">edit</a>
+                                        <a href="{{ route('edit_pembelian', $p->id_pembelian) }}" class="btn btn-warning">edit</a>
                                     </td>
                                     <td class="text-center">
-                                        <a href="#" class="btn btn-danger">hapus</a>
+                                        <a href="{{ route('hapus_pembelian', $p->id_pembelian) }}" class="btn btn-danger">hapus</a>
                                     </td>
                                 </tr>
                             @endforeach
