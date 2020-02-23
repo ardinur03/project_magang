@@ -34,8 +34,7 @@ class clientController extends Controller
             'no_ktp'    => 'required',
             'no_hp'     => 'required',
             'email'     => 'required',
-            'ket'       => 'required',
-            'crated_by' => 'required'   
+            'ket'       => 'required'
         ]);
         // proses input
         Client::create([
@@ -48,7 +47,7 @@ class clientController extends Controller
             'no_hp'     => $request->no_hp,
             'email'     => $request->email,
             'ket'       => $request->ket,
-            'crated_by' => $request->crated_by
+            'crated_by' => auth()->user()->id 
         ]);
         // mengembalikan ke view
         return redirect('/home/client');
@@ -80,8 +79,7 @@ class clientController extends Controller
             'no_ktp' => 'required',
             'no_hp' => 'required',
             'email' => 'required',
-            'ket' => 'required',
-            'crated_by' => 'required'   
+            'ket' => 'required'   
         ]);
         // proses edit client
         $client = Client::find($id_client);
@@ -94,7 +92,7 @@ class clientController extends Controller
         $client ->no_hp = $request->no_hp;
         $client ->email = $request->email;
         $client ->ket = $request->ket;
-        $client ->crated_by = $request->crated_by;
+        $client ->crated_by = auth()->user()->id;
         $client->save();
         // mengembalikan
         return redirect ('/home/client');
