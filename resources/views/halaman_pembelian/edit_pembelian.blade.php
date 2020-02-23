@@ -16,7 +16,7 @@
                     <div class="panel-heading">
                         <ol class="breadcrumb">
                         <li><a href="{{ route('index_list_pembelian') }}">Pembelian</a></li>
-                        <li class="active">Edit Unit</li>
+                        <li class="active">Edit Pembelian</li>
                         </ol>
                     </div> 
                     {{-- breadcrumb akhir --}}
@@ -30,9 +30,9 @@
                             <div class="form-group">
                                 <label>Kode Unit</label>
                                 <select name="pilih_unit" class="form-control">
-                                    <option value="">{{ $pembelian->pilih_unit->kode_unit }}</option>
-                                    @foreach ($pembeli as $p)
-                                        <option value="{{ $p->pilih_unit->id_unit }}">{{ $p->pilih_unit->kode_unit }}</option>
+                                    <option value="{{ $pembelian->pilih_unit->id_unit }}">{{ $pembelian->pilih_unit->kode_unit }}</option>
+                                    @foreach ($unit as $u)
+                                    <option value="{{ $u->id_unit }}">{{ $u->kode_unit }}</option>
                                     @endforeach
                                 </select> 
                             </div>
@@ -41,9 +41,9 @@
                             <div class="form-group">
                                 <label>Nama Client</label>
                                 <select name="pilih_client" class="form-control">
-                                    <option value="">{{ $pembelian->pilih_client->nama_client }}</option>
-                                    @foreach ($pembeli as $p)
-                                        <option value="{{ $p->pilih_client->id_client }}">{{ $p->pilih_client->nama_client }}</option>
+                                    <option value="{{ $pembelian->pilih_client->id_client }}">{{ $pembelian->pilih_client->nama_client }}</option>
+                                    @foreach ($client as $c)
+                                    <option value="{{ $c->id_client}}">{{ $c->nama_client }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -52,9 +52,9 @@
                             <div class="form-group">
                                 <label>Nama Marketing</label>
                                 <select name="pilih_marketing" class="form-control">
-                                    <option value="">{{ $pembelian->pilih_marketing->nama }}</option>
-                                    @foreach ($pembeli as $p)
-                                        <option value="{{ $p->pilih_marketing->id_marketing }}">{{ $p->pilih_marketing->nama }}</option>
+                                    <option value="{{ $pembelian->pilih_marketing->id_marketing }}">{{ $pembelian->pilih_marketing->nama }}</option>
+                                    @foreach ($marketing as $m)
+                                    <option value="{{ $m->id_marketing}}">{{ $m->nama }}</option>
                                     @endforeach
                                 </select>
                             </div>
