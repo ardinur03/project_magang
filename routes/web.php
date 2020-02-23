@@ -69,10 +69,12 @@ Route::put('/home/marketing/update/{id_marketing}', 'marketingController@update'
 Route::get('/home/pembelian', 'pembelianController@index')->name('index_pembelian');
 // rute proses pembelian setelah klik simpan
 Route::post('/home/pembelian/proses', 'pembelianController@proses')->name('proses_simpan');
+
 // rute menuju list pembelian 
-Route::get('/home/list_pembelian', 'list_pembelianController@index')->name('index_list_pembelian');
-
-
-
-// tambahan doang
-// Route::get('/home/coba', 'homeController@three_Sum');
+Route::get('/home/list_pembelian', 'pembelianController@list_pembelian')->name('index_list_pembelian');
+// rute menuju edit list pembelian
+Route::get('/home/list_pembelian/edit={id_pembelian}', 'pembelianController@edit_pembelian')->name('edit_pembelian');
+// proses edit pembelian
+Route::PUT('/home/list_pembelian/edit_proses{id_pembelian}', 'pembelianController@edit_proses')->name('proses_edit_pembelian');
+// rute hapus list pembelian
+Route::get('/home/hapus_pembelian={id_pembelian}', 'pembelianController@hapus_pembelian')->name('hapus_pembelian');
