@@ -18,7 +18,7 @@ class pembelianController extends Controller
         return view ('halaman_pembelian.pembelian', ['unit' => $unit, 'client' => $client, 'marketing' => $marketing]);
     }
 
-    // proses tambah pembelian <- rute('proses_tambah)
+    // proses tambah pembelian <- rute('proses_tambah-simpan)
     public function proses (Request $request) {
         // memvalidasi
         $this->validate($request, [ 
@@ -33,7 +33,7 @@ class pembelianController extends Controller
             'id_marketing'=> $request->pilih_marketing,
         ]);
         // mengembalikan
-        return redirect ('/home/pembelian');
+        return redirect ('/home/pembelian')->with(['success' => 'Data Pembelian Sukses di inputkan !!!   silahkan klik tombol di kanan untuk melihat list pembelian']);
     } 
     
     //passing data ke view
@@ -45,9 +45,10 @@ class pembelianController extends Controller
     // metod menuju ke view edit penjualan
     public function edit_pembelian($id_pembelian) {
         $pembelian = Pembelian::find($id_pembelian);
-        $pembeli = Pembelian::all();
         $unit = Unit::all();
-        return view ('halaman_pembelian.edit_pembelian', ['pembelian'=>$pembelian, 'unit'=>$unit, 'pembeli'=>$pembeli]);
+        $client = Client::all(); 
+        $marketing = Marketing::all();
+        return view ('halaman_pembelian.edit_pembelian', ['pembelian'=>$pembelian, 'unit'=>$unit, 'client' => $client, 'marketing' => $marketing]);
     } 
     // proses edit pembelian
     public function edit_proses ($id_pembelian, Request $request) {
@@ -57,7 +58,7 @@ class pembelianController extends Controller
         $pembelian->id_marketing = $request->pilih_marketing;
         $pembelian->save();
         // mengembalikan
-        return redirect ('/home/list_pembelian');
+        return redirect ('/home/list_pembelian')->with(['info' => 'Data Pembelian berhasil di perbaharui !!!']);
     }
 
     // proses hapus pembelian
@@ -65,6 +66,6 @@ class pembelianController extends Controller
         $pembelian = Pembelian::find($id_pembelian);
         $pembelian->delete();
         // mengembalikan 
-        return redirect ('/home/list_pembelian');
+        return redirect ('/home/list_pembelian')->with(['warning' => 'Data Pembelian telah Terhapus !!!']);
     }
 }
