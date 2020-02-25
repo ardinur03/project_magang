@@ -78,7 +78,7 @@ class unitController extends Controller
        $unit = Unit::find($id_unit);
        $unit->delete();
        // mengembalikkan
-       return redirect ('/home/unit')->with(['warning' => 'Data unit telah terhapus !!!']);
+       return redirect ('/home/unit')->with(['warning' => 'Terhapus !!!']);
     }
 
 }
