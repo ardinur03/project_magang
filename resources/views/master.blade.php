@@ -55,12 +55,12 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('index_unit') }}">Unit</a></li>
-                        <li><a href="{{ route('index_client') }}">Client</a></li>
-                        <li><a href="{{ route('index_marketing') }}">Marketing</a></li>
-                        <li><a href="{{ route('index_pembelian') }}">Pembelian</a></li>
-                        <li><a href="{{ route('index_list_pembelian') }}">List Pembelian</a></li>
+                        <li><a href="{{ route('home') }}" title="Home">Home</a></li>
+                        <li><a href="{{ route('index_unit') }}" title="Unit">Unit</a></li>
+                        <li><a href="{{ route('index_client') }}" title="Client">Client</a></li>
+                        <li><a href="{{ route('index_marketing') }}" title="Marketing">Marketing</a></li>
+                        <li><a href="{{ route('index_pembelian') }}" title="Pembelian">Pembelian</a></li>
+                        <li><a href="{{ route('index_list_pembelian') }}" title="List Pembelian">List Pembelian</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -70,7 +70,7 @@
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                    document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
