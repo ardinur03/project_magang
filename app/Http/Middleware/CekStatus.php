@@ -3,9 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
-class CekStatus
-{
+use Auth;
+class CekStatus {
     /**
      * Handle an incoming request.
      *
@@ -13,8 +12,38 @@ class CekStatus
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    // public function handle($request, Closure $next)
+    // { 
+    // $user = \App\User::where('status', $request->id)->first();
+    //     // die($user);
+    // if ($user->status != 'admin') {
+    //     return redirect('/');
+    // }elseif ($user->status == 'admin' && 'guest'){
+    //     return redirect($request);
+    // }
+
+    // return $next($request);
+
+
+    public function handle($request, Closure $next,$status='admin')
     {
-        return $next($request);
+        $getcredential = $request->user();
+        // echo '<pre>';
+        // var_dump($cekstatus->status);
+        // die();
+        $is_logged = 0;
+        if($getcredential) {
+            $cekstatus = $getcredential->status;
+            if($cekstatus == $status && $status =='admin') {
+                $is_logged = 1;
+            }
+            if($is_logged == 1)
+                return $next($request);    
+            else
+            return redirect('401');
+        } else {
+            return abort(401);
+        }
+        
     }
 }
