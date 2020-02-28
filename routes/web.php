@@ -19,24 +19,53 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+/** 
+ * coba middleware awal
+
+
+ 
+ * coba middleware akhir
+
+*/
+    Route::group(['middleware' => ['auth']], function () {
+        // rute halaman unit
+        Route::get('/home/unit', 'unitController@pindah')->name('index_unit');
+        //rute view tambah unit 
+        Route::get('/home/unit/tambah_unit', 'unitController@tambah')->name('tambah_unit');
+        // rute proses unit
+        Route::put('/home/unit/proses/{id_unit}', 'unitController@update')->name('proses_edit_unit');
+        // rute view edit unit
+        Route::get('/home/unit/edit/{id_unit}', 'unitController@edit')->name('edit_unit');
+        // rute tambah view
+        Route::post('/home/unit/proses', 'unitController@proses')->name('proses_tambah_unit');
+        // rute hapus unit
+        Route::get('/home/unit/hapus/{id_unit}', 'unitController@delete')->name('hapus_unit');
+    });
+
+    Route::get('/home/profile', function () {
+        echo "Ini profile admin!!!";
+    })->middleware('cekstatus');
+
+
 // 1. crud unit
 // rute halaman unit
-Route::get('/home/unit', 'unitController@pindah')->name('index_unit');
-//rute view tambah unit 
-Route::get('/home/unit/tambah_unit', 'unitController@tambah')->name('tambah_unit');
+// Route::get('/home/unit', 'unitController@pindah')->name('index_unit');
+// rute view tambah unit 
+// Route::get('/home/unit/tambah_unit', 'unitController@tambah')->name('tambah_unit');
 // rute proses unit
-Route::put('/home/unit/proses/{id_unit}', 'unitController@update')->name('proses_edit_unit');
+// Route::put('/home/unit/proses/{id_unit}', 'unitController@update')->name('proses_edit_unit');
 // rute view edit unit
-Route::get('/home/unit/edit/{id_unit}', 'unitController@edit')->name('edit_unit');
+// Route::get('/home/unit/edit/{id_unit}', 'unitController@edit')->name('edit_unit');
 // rute tambah view
-Route::post('/home/unit/proses', 'unitController@proses')->name('proses_tambah_unit');
+// Route::post('/home/unit/proses', 'unitController@proses')->name('proses_tambah_unit');
 // rute hapus unit
-Route::get('/home/unit/hapus/{id_unit}', 'unitController@delete')->name('hapus_unit');
+// Route::get('/home/unit/hapus/{id_unit}', 'unitController@delete')->name('hapus_unit');
 
 
 //2. crud client
 // rute halaman client dari metod pindah ke clientController
-Route::get('/home/client', 'clientController@pindah')->name('index_client');
+Route::get('/home/client', 'clientController@pindah')->name('index_client')->middleware('cekstatus');
 // rute tambah client
 Route::get('/home/client/tambah', 'clientController@tambah')->name('client_tambah');
 // rute proses simpan client
@@ -78,3 +107,11 @@ Route::get('/home/list_pembelian/edit={id_pembelian}', 'pembelianController@edit
 Route::PUT('/home/list_pembelian/edit_proses{id_pembelian}', 'pembelianController@edit_proses')->name('proses_edit_pembelian');
 // rute hapus list pembelian
 Route::get('/home/hapus_pembelian={id_pembelian}', 'pembelianController@hapus_pembelian')->name('hapus_pembelian');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+// palsu
+Route::get('/hallo', 'homeController@hallo');
