@@ -21,29 +21,28 @@ class CekStatus {
     // }elseif ($user->status == 'admin' && 'guest'){
     //     return redirect($request);
     // }
-
     // return $next($request);
 
 
     public function handle($request, Closure $next,$status='admin')
     {
+        /** 
+        * echo '<pre>';
+        * var_dump($cekstatus->status);
+        * die();
+        * */ 
+
         $getcredential = $request->user();
-        // echo '<pre>';
-        // var_dump($cekstatus->status);
-        // die();
         $is_logged = 0;
-        if($getcredential) {
+        if($getcredential){
             $cekstatus = $getcredential->status;
-            if($cekstatus == $status && $status =='admin') {
-                $is_logged = 1;
-            }
-            if($is_logged == 1)
-                return $next($request);    
-            else
-            return redirect('401');
-        } else {
-            return abort(401);
-        }
+            if($cekstatus == $status && $status == 'admin'){
+            $is_logged = 1;
+            } if($is_logged == 1)
+                return $next($request); 
+		}else{
+			return abort(403);
+		}
         
     }
 }
