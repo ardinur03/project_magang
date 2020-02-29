@@ -54,13 +54,17 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            p {
+                font-family: cursive;
+            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    Oops, halaman yang anda akses tidak ditemukan. 
+                   <p>ERROR<br>404</p>
+                    <p>Oops, halaman yang anda akses tidak ditemukan.</p> 
                 </div>
                     <a href="/" class="btn btn-info">Kembali ke home</a>
             </div>

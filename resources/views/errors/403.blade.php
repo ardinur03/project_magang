@@ -54,19 +54,23 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            p {
+                font-family: cursive;
+            }
+
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    403 <br>
-                    Oops, Anda tidak memiliki hak untuk mengakses halaman ini. 
+                    <p>ERROR<br>403</p> 
+                    <p>Oops, Anda tidak memiliki hak untuk mengakses halaman ini.</p> 
                 </div>
                     <a href="/" class="btn btn-info">Kembali ke home</a>
             </div>
         </div>
-
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
