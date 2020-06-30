@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // rute unit awal
-    Route::group(['middleware' => ['cekstatus']], function () {
+    Route::group(['middleware' => ['auth']], function () {
         // rute halaman unit
         Route::get('/home/unit', 'unitController@pindah')->name('index_unit');
         //rute view tambah unit 
@@ -37,7 +37,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // rute unit akhir
 
 // rute client awal
-    Route::group(['middleware' => ['cekstatus']], function () {
+    Route::group(['middleware' => ['auth']], function () {
         // rute halaman client dari metod pindah ke clientController
         Route::get('/home/client', 'clientController@pindah')->name('index_client');
         // rute tambah client
@@ -54,7 +54,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // rute client akhir
 
 // rute marketing awal
-    Route::group(['middleware' => ['cekstatus']], function () {
+    Route::group(['middleware' => ['auth']], function () {
         // rute halaman marketing indexnya
         Route::get('/home/marketing', 'marketingController@index')->name('index_marketing');
         // rute hapus data marketing
@@ -71,7 +71,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // rute marketing akhir
 
 // rute pembelian awal
-    Route::group(['middleware' => 'cekstatus'], function () {
+    Route::group(['middleware' => 'auth'], function () {
         // rute view Pembelian 
         Route::get('/home/pembelian', 'pembelianController@index')->name('index_pembelian');
         // rute proses pembelian setelah klik simpan
