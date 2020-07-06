@@ -1,3 +1,5 @@
+@extends('layouts.master_errors')
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>

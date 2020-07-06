@@ -85,4 +85,6 @@ Route::get('/home', 'HomeController@index')->name('home');
         // rute hapus list pembelian
         Route::get('/home/hapus_pembelian={id_pembelian}', 'pembelianController@hapus_pembelian')->name('hapus_pembelian');
     });
+
+    
 // rute pembelian akhir
