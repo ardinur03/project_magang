@@ -1,6 +1,5 @@
-# Simple registration App
+# A simple Web App for selling property between marketing and clients
 #### Learning Project during an Internship, at House Development Solutions in 11th grade of vocational high school  |  in 2019
-
 
 ## Technology 
 1. PHP Laravel V6.18
